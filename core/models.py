@@ -19,6 +19,8 @@ class User(models.Model):
     height = models.PositiveSmallIntegerField(null=True)
     income = models.DecimalField(max_digits=8, decimal_places=2)
 
+    def __str__(self):
+        return f'{self.username}:{self.email}'
     class Meta:
         verbose_name = 'کاربر'
         verbose_name_plural = 'کاربران'
