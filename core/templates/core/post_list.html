@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post List</title>
-</head>
-<body>
-    <h2>Post List: </h2>
-    <ul>
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}
+
+فیسبوک
+
+{% endblock %}
+
+{% block main %}
+        <h2 style="font-family: 'Vazirmatn';">لیست پست‌ها: </h2>
+    <ul class="list-group">
         {% for post in posts %}
 
-        <li> {{ post.title }}</li>
+    <li class="list-group-item"><a href="{% url 'post_detail' post_id=post.id %}">{{ post.title }}</a> </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+
+    <img src="{% static 'images/types-of-flowers.webp' %}" alt="">
+
+
+{% endblock %}

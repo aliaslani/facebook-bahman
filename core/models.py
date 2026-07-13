@@ -29,7 +29,7 @@ class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     last_upate = models.DateTimeField(auto_now=True)
-
+    image = models.ImageField(upload_to='posts/images/', null=True, blank=True)
 
     def __str__(self):
         return self.title

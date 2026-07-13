@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+
+{% block main %}
+
+<div class="card mt-2">
+    <h5 class="card-header">{{ post.title }}</h5>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-8">
+                <h5 class="card-title">{{ post.title }} </h5>
+                <p class="card-text text-justify">{{ post.content }}</p>
+                <small>{{ post.user }} </small><br>
+                <small>{{ post.created_at }}</small>
+            </div>
+            <div class="col-sm-4">
+                <img class="w-100" src="{{ post.image.url }}" alt="">
+            </div>
+        </div>
+
+    </div>
+    <div class="card-footer">
+        <a href="#" class="btn btn-danger">حذف</a>
+        <a href="#" class="btn btn-warning">ویرایش</a>
+    </div>
+</div>
+
+
+{% endblock %}

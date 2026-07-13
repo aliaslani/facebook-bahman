@@ -19,3 +19,11 @@ def post_list(request):
         'posts': posts
     }
     return render(request, 'core/post_list.html', context=context)
+
+
+def post_detail(request, post_id):
+    post = Post.objects.filter(id=post_id).first()
+    context = {
+        'post':post
+    }
+    return render(request, 'core/post_detail.html', context=context)

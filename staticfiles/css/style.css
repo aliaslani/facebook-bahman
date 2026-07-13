@@ -1,0 +1,10 @@
+* {
+    font-family: "Vazirmatn", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.text-justify {
+    text-align: justify;
+}
