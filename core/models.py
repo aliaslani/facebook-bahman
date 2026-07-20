@@ -24,7 +24,7 @@ class User(models.Model):
         verbose_name_plural = 'کاربران'
 
 class Post(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, verbose_name='عنوان')
     content = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)

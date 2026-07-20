@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+
+ویرایش پست 
+
+{% endblock %}
+
+
+{% block main %}
+
+<form action="{% url 'edit_post' post_id=p.id %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    {{ form }}
+
+    <input type="submit" value="ویرایش" class="btn btn-primary">
+</form>
+
+{% endblock %}

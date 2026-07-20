@@ -16,9 +16,12 @@
                 <small>{{ post.user }} </small><br>
                 <small>{{ post.created_at }}</small>
             </div>
+            {% if post.image %}
             <div class="col-sm-4">
                 <img class="w-100" src="{{ post.image.url }}" alt="">
             </div>
+              
+            {% endif %}
         </div>
 
     </div>
@@ -26,7 +29,7 @@
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
   حذف
 </button>
-        <a href="#" class="btn btn-warning">ویرایش</a>
+        <a href="{% url 'edit_post' post_id=post.id %}" class="btn btn-warning">ویرایش</a>
     </div>
 </div>
 
