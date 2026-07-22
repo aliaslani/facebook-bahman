@@ -3,15 +3,15 @@ from email import message
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.http import HttpResponse
-from core.models import User, Post
+from core.models import Post
 from core.forms import NewPostForm
-
+from accounts.models import CustomUser
 
 def say_hello(request): #view function
     return HttpResponse('<h1 style="color: red; text-align:center;">Hello world!</h1>')
 
 def home(request, username):
-    name = User.objects.filter(username=username).first()
+    name = CustomUser.objects.filter(username=username).first()
     context = {
         'first_name': name.name.capitalize() if name else 'World'
     }

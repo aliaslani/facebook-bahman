@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    ورود
+{% endblock %}
+
+
+
+
+{% block main %}
+
+    <div class="row">
+        <div class="col-sm-6 mt-4">
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+
+                {{ form.as_p  }}
+
+                <input type="submit" class="btn btn-primary" value="ورود">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

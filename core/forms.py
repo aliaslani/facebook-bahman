@@ -1,6 +1,5 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from core.models import User
 from django.core.validators import EmailValidator, MinLengthValidator, MinValueValidator, MaxLengthValidator, MaxValueValidator, FileExtensionValidator, RegexValidator, DecimalValidator
 from core.models import Post
 

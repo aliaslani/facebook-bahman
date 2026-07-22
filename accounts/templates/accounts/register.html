@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    ثبت نام
+{% endblock %}
+
+
+
+
+{% block main %}
+
+    <div class="row">
+        <div class="col-sm-6 mt-4">
+            <form action="{% url 'register' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{ form.as_p  }}
+
+                <input type="submit" class="btn btn-primary" value="ثبت نام">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
